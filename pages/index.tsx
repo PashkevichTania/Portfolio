@@ -2,12 +2,14 @@ import Head from 'next/head'
 import Header from '@/components/Header'
 import Link from 'next/link'
 import React from 'react'
-import { Experience, PageInfo, Project, Skill, CodeExample } from '@/typings'
-import { GetServerSideProps, GetStaticProps } from 'next'
+import {Experience, PageInfo, Project, Skill, CodeExample, SkillGroup} from '@/typings'
+import { GetStaticProps } from 'next'
 import { fetchPageInfo } from '@/utils/fetchpageInfo'
 import { fetchExperiences } from '@/utils/fetchExperiences'
 import { fetchSkills } from '@/utils/fetchSkills'
+import { fetchSkillGroups } from '@/utils/fetchSkillGroups'
 import { fetchProjects } from '@/utils/fetchProjects'
+import { fetchCodeExamples } from '@/utils/fetchCodeExamples'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
 import WorkExperience from '@/components/WorkExperience'
@@ -21,15 +23,14 @@ type Props ={
   pageInfo:PageInfo;
   experiences: Experience[];
   skills: Skill[];
+  skillGroups: SkillGroup;
   projects: Project[];
-  codeExample: [];
+  codeExample: CodeExample[];
 }
 
 
 const Home = ({pageInfo, experiences, projects, skills}: Props) => {
    return (
-
-    
     <div className='bg-custom-raisin-black text-custom-snow
     h-screen
     snap-y snap-mandatory overflow-y-scroll overflow-x-hidden
@@ -81,15 +82,17 @@ export default Home;
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
-  const skills : Skill[] = await fetchSkills();
-  const projects : Project[] = await fetchProjects();
-  const codeExample : [] = [];
+  const skills: Skill[] = await fetchSkills();
+  const skillGroups: SkillGroup = await fetchSkillGroups();
+  const projects: Project[] = await fetchProjects();
+  const codeExample: CodeExample[] = await fetchCodeExamples();
 
   return {
     props: {
       pageInfo,
       experiences,
       skills,
+      skillGroups,
       projects,
       codeExample
     }, 

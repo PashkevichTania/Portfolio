@@ -1,6 +1,6 @@
 export default{
     name: 'codeExample',
-    title: 'codeExample',
+    title: 'Code Example',
     type: 'document',
     fields: [
       {

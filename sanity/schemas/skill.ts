@@ -18,8 +18,7 @@ export default {
             options: {
                 list: [
                     {title: "Basic knowledge", value: "Basic knowledge"},
-                    {title: "Limited experience", value: "Limited experience"},
-                    {title: "Competent", value: "Competent"},
+                    {title: "Intermediate", value: "Intermediate"},
                     {title: "Advanced", value: "Advanced"},
                     {title: "Expert", value: "Expert"},
                 ],
