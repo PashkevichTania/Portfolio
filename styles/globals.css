@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: linear-gradient(rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234)) #494F58;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 15px;
+}
+
+*::-webkit-scrollbar:horizontal{
+    height: 15px;
+    width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #494F58;
+}
+
+*::-webkit-scrollbar-thumb {
+    border: none;
+}
+*::-webkit-scrollbar-thumb:horizontal {
+    background: linear-gradient(45deg, rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234));
+}
+*::-webkit-scrollbar-thumb:vertical {
+    background: linear-gradient(rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234));
+}
+
+*::-webkit-scrollbar-corner {
+    background: #494F58;
+}
+
+@layer components {
+    .linkButton {
+        @apply px-6 py-2 rounded-full uppercase text-xs
+        tracking-widest text-custom-snow transition-all
+        hover:text-custom-aquamarine
+    }
+
+    .contactInput {
+        @apply outline-none bg-slate-400/10 rounded-sm border-b
+        px-4 py-2 border-[#242424] text-gray-500 placeholder-gray-500
+        transition-all focus:border-custom-indigo focus:text-custom-indigo
+        hover:border-custom-indigo
+    }
+}
