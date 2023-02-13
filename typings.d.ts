@@ -58,9 +58,11 @@ export interface Project extends SanityBody {
   title: string
   _type: "project"
   image: Image
-  linkToBuild: string
   summary: string
+  isCommercial: boolean
   technologies: Skill[]
+  linkToBuild?: string
+  linkToRepo?: string
 }
 
 export interface CodeExample extends SanityBody {

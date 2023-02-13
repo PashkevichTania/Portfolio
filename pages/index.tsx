@@ -40,8 +40,8 @@ export const sections = [
   },
   {
     name: "skills",
-    props: "skills",
-    component: (props: Skill[]) => <Skills skills={props} />,
+    props: "skillGroups",
+    component: (props: SkillGroup) => <Skills skillGroups={props} />,
     header: "skills",
   },
   {

@@ -1,12 +1,18 @@
 import { motion } from "framer-motion"
 import Skill from "./Skill"
-import { Skill as SkillType } from "@/typings"
+import { SkillGroup } from "@/typings"
 
 type Props = {
-  skills: SkillType[]
+  skillGroups: SkillGroup
 }
 
-export default function Skills({ skills }: Props) {
+export default function Skills({ skillGroups }: Props) {
+  const groups = [
+    { title: "Front-end", skills: skillGroups.frontEnd },
+    { title: "Back-end", skills: skillGroups.backEnd },
+    { title: "Tools", skills: skillGroups.tools },
+    { title: "Testing", skills: skillGroups.testing },
+  ]
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -23,13 +29,18 @@ export default function Skills({ skills }: Props) {
       >
         Skills
       </h3>
-      <div className="grid grid-cols-4 gap-5">
-        {skills?.slice(0, skills.length / 2).map((skill) => (
-          <Skill key={skill._id} skill={skill} />
-        ))}
-
-        {skills?.slice(skills.length / 2, skills.length).map((skill) => (
-          <Skill key={skill._id} skill={skill} directionLeft />
+      <div className="grid grid-cols-4 gap-5 md:gap-8 overflow-x-auto">
+        {groups.map((group) => (
+          <div key={group.title} className="bg-custom-charcoal-300 rounded-2xl py-5 px-3 w-[220px]">
+            <h4 className="text-lg text-center uppercase tracking-widest text-custom-aquamarine">
+              {group.title}
+            </h4>
+            <div>
+              {group.skills?.map((skill) => (
+                <Skill key={skill._id} skill={skill} />
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </motion.div>

@@ -1,10 +1,12 @@
 import { motion } from "framer-motion"
-import { Project } from "@/typings"
-import { urlFor } from "@/lib/sanity"
+import { Project as ProjectType } from "@/typings"
+import Project from "./Project"
+import { sanityClient, urlFor } from "@/lib/sanity"
 import Link from "next/link"
+import { useNextSanityImage } from "next-sanity-image"
 
 type Props = {
-  projects: Project[]
+  projects: ProjectType[]
 }
 
 export default function Projects({ projects }: Props) {
@@ -28,49 +30,14 @@ export default function Projects({ projects }: Props) {
        overflow-y-hidden snap-x snap-mandatory z-20"
       >
         {projects.map((project, i) => (
-          <div
-            key={project._id}
-            className="w-screen flex-shrink-0 snap-center flex flex-col
-            space-y-5 items-center justify-center p-20 md:p-44 h-screen"
-          >
-            <motion.img
-              initial={{ y: -300, opacity: 0 }}
-              transition={{ duration: 1.2 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              src={urlFor(project?.image).url()}
-              className="h-[180px]"
-              alt=""
-            />
-            <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <Link href={project?.linkToBuild}>
-                <h4 className="text-4xl font-semibold text-center">
-                  <span className="underline decoration-[#f7ab0a]">
-                    Case Study {i + 1} of {projects.length}:
-                  </span>{" "}
-                  {project?.title}
-                </h4>
-              </Link>
-
-              <div className="flex items-center space-x-2 justify-center">
-                {project?.technologies.map((technology) => (
-                  <img
-                    className="h-10 w-10"
-                    key={technology._id}
-                    src={urlFor(technology.image).url()}
-                    alt={technology.title}
-                  />
-                ))}
-              </div>
-              <p className="text-lg text-center md:text-left">{project?.summary}</p>
-            </div>
-          </div>
+          <Project key={project._id} project={project} />
         ))}
       </div>
 
       <div
-        className=" w-full absolute top-[30%] bg-[#f7ab0a]/10 left-0 h-[500px]
-        -skew-y-12"
+        className=" w-full absolute top-[30%]
+        bg-gradient-to-br from-custom-aquamarine/40 to-custom-indigo/40
+        left-0 h-[500px] -skew-y-12"
       />
     </motion.div>
   )

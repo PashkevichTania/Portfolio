@@ -26,9 +26,9 @@ function CodeExamples({ examples }: Props) {
       >
         Code Examples
       </h3>
-      <div className="p-2 flex flex-col md:flex-row space-x-8 justify-between text-left">
+      <div className="p-2 flex flex-row space-x-8 justify-between text-left">
         {examples.map((item) => (
-          <div key={item._id} className="m-2 max-h-[550px] overflow-auto">
+          <div key={item._id} className="m-2 max-h-[550px] max-w-xl overflow-auto">
             <pre>
               <code className={`language-${item.language} match-braces rainbow-braces`}>
                 {item.code}
