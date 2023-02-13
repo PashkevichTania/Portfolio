@@ -21,7 +21,7 @@ type Props = {
   pageInfo: PageInfo
   experiences: Experience[]
   skills: Skill[]
-  skillGroups: SkillGroup
+  skillGroups: SkillGroup[]
   projects: Project[]
   codeExamples: CodeExample[]
 }
@@ -41,7 +41,7 @@ export const sections = [
   {
     name: "skills",
     props: "skillGroups",
-    component: (props: SkillGroup) => <Skills skillGroups={props} />,
+    component: (props: SkillGroup[]) => <Skills skillGroups={props} />,
     header: "skills",
   },
   {
@@ -74,9 +74,9 @@ const Home = (props: Props) => {
   return (
     <div
       className="bg-custom-raisin-black text-custom-snow
-    h-screen
+    h-screen z-0
     snap-y snap-mandatory overflow-y-scroll overflow-x-hidden
-     z-0"
+     scrollbar scrollbar-track-custom-charcoal-100/20 scrollbar-thumb-custom-aquamarine/80"
     >
       <Head>
         <title>Tania-Pashkevich-Portfolio</title>
@@ -106,7 +106,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo()
   const experiences: Experience[] = await fetchExperiences()
   const skills: Skill[] = await fetchSkills()
-  const skillGroups: SkillGroup = await fetchSkillGroups()
+  const skillGroups: SkillGroup[] = await fetchSkillGroups()
   const projects: Project[] = await fetchProjects()
   const codeExamples: CodeExample[] = await fetchCodeExamples()
 

@@ -28,9 +28,10 @@ function CodeExamples({ examples }: Props) {
       </h3>
       <div className="p-2 flex flex-row space-x-8 justify-between text-left">
         {examples.map((item) => (
-          <div key={item._id} className="m-2 max-h-[550px] max-w-xl overflow-auto">
-            <pre>
-              <code className={`language-${item.language} match-braces rainbow-braces`}>
+          <div key={item._id} className="m-2">
+            <pre className='overflow-auto  max-h-[550px] max-w-xl
+            scrollbar-thin scrollbar-track-custom-charcoal-100/20 scrollbar-thumb-custom-aquamarine/80'>
+              <code className={`match-braces rainbow-braces language-${item.language} `}>
                 {item.code}
               </code>
             </pre>

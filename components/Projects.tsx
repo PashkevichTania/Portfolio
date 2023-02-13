@@ -1,9 +1,6 @@
 import { motion } from "framer-motion"
 import { Project as ProjectType } from "@/typings"
 import Project from "./Project"
-import { sanityClient, urlFor } from "@/lib/sanity"
-import Link from "next/link"
-import { useNextSanityImage } from "next-sanity-image"
 
 type Props = {
   projects: ProjectType[]
@@ -27,18 +24,13 @@ export default function Projects({ projects }: Props) {
 
       <div
         className="relative w-full flex overflow-x-scroll
-       overflow-y-hidden snap-x snap-mandatory z-20"
+       overflow-y-hidden snap-x snap-mandatory z-20
+        scrollbar-thin scrollbar-custom-charcoal-100/20 scrollbar-thumb-custom-aquamarine/80"
       >
-        {projects.map((project, i) => (
+        {projects.map((project) => (
           <Project key={project._id} project={project} />
         ))}
       </div>
-
-      <div
-        className=" w-full absolute top-[30%]
-        bg-gradient-to-br from-custom-aquamarine/40 to-custom-indigo/40
-        left-0 h-[500px] -skew-y-12"
-      />
     </motion.div>
   )
 }

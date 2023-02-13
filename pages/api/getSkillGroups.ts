@@ -1,29 +1,21 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import { groq } from "next-sanity";
-import { sanityClient } from "@/lib/sanity";
-import { SkillGroup } from "@/typings";
-
+import type { NextApiRequest, NextApiResponse } from "next"
+import { groq } from "next-sanity"
+import { sanityClient } from "@/lib/sanity"
+import { SkillGroup } from "@/typings"
 
 const query = groq`
-    *[_type == "skillGroup"][0] {
+    *[_type == "skillGroup"] | order(index asc) {
         ...,
-        frontEnd[]->,
-        backEnd[]->,
-        tools[]->,
-        testing[]->,
+        skills[]->,
     }
-`;
+`
 
 type Data = {
-    skillGroups : SkillGroup
+  skillGroups: SkillGroup[]
 }
 
-export default async function handler(
-    req : NextApiRequest,
-    res: NextApiResponse<Data>
+export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+  const skillGroups: SkillGroup[] = await sanityClient.fetch(query)
 
-) {
-    const skillGroups : SkillGroup = await sanityClient.fetch(query);
-
-    res.status(200).json({skillGroups})
+  res.status(200).json({ skillGroups })
 }

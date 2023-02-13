@@ -10,8 +10,8 @@ export default function ExperienceCard({ experience }: Props) {
   return (
     <article
       className="flex flex-col rounded-lg h-96
-     items-center space-y-7 flex-shrink-0 w-[400px]
-     md:w-[600px] xl:w-[900px] snap-center bg-custom-charcoal-300
+     items-start justify-between space-y-7 flex-shrink-0 w-[400px]
+     md:w-[500px] xl:w-[800px] snap-center bg-custom-charcoal-300
      p-10 overflow-hidden
     "
     >
@@ -30,8 +30,9 @@ export default function ExperienceCard({ experience }: Props) {
       />
 
       <div className="px-1 md:px-10">
+        <p className="font-bold font-xs mt-1">{experience?.name}</p>
         <h4 className="font-light">{experience?.jobTitle}</h4>
-        <p className="font-bold font-xs mt-1">{experience?.company}</p>
+        <p className="mt-1">{experience?.companyDescription}</p>
         <div className="flex space-x-2 my-2">
           {experience?.technologies?.map((technology) => (
             <img

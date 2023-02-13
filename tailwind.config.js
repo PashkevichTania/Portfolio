@@ -9,7 +9,7 @@ module.exports = {
       colors: {
         'custom-snow': '#FCF7F8',
         'custom-aquamarine': '#5DFFBE',
-        'custom-violet': '#8E5BFC',
+        'custom-violet': '#DE75FF',
         'custom-indigo': '#665bf0',
         'custom-charcoal': {
           100:'#72798f',

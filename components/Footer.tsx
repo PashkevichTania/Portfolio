@@ -7,7 +7,7 @@ function Footer() {
       <Link href="#hero">
         <div className="flex items-center justify-center">
           <ArrowUpCircleIcon
-            className="text-custom-indigo h-7
+            className="text-custom-aquamarine h-7
                      w-7 animate-pulse"
           />
         </div>

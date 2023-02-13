@@ -29,10 +29,7 @@ export interface PageInfo extends SanityBody {
 export interface SkillGroup extends SanityBody {
   _type: "group"
   title: string
-  frontEnd: Skill[]
-  backEnd: Skill[]
-  tools: Skill[]
-  testing: Skill[]
+  skills: Skill[]
 }
 
 export interface Skill extends SanityBody {
@@ -44,8 +41,9 @@ export interface Skill extends SanityBody {
 
 export interface Experience extends SanityBody {
   _type: "experience"
-  company: string
+  name: string
   companyImage: Image
+  companyDescription: string
   dateStarted: date
   dateEnded: date
   isCurrentlyWorkingHere: boolean

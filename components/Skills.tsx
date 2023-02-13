@@ -3,24 +3,18 @@ import Skill from "./Skill"
 import { SkillGroup } from "@/typings"
 
 type Props = {
-  skillGroups: SkillGroup
+  skillGroups: SkillGroup[]
 }
 
 export default function Skills({ skillGroups }: Props) {
-  const groups = [
-    { title: "Front-end", skills: skillGroups.frontEnd },
-    { title: "Back-end", skills: skillGroups.backEnd },
-    { title: "Tools", skills: skillGroups.tools },
-    { title: "Testing", skills: skillGroups.testing },
-  ]
   return (
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="h-screen flex relative flex-col
-    text-center md:text-left xl:flex-row max-w-[2000px]
-    xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto
+      className="h-screen min-h-screen flex relative flex-col
+    text-center md:text-left xl:flex-row  max-w-full mx-auto
+    xl:px-10 justify-center xl:space-y-0 mx-auto
     items-center"
     >
       <h3
@@ -29,16 +23,21 @@ export default function Skills({ skillGroups }: Props) {
       >
         Skills
       </h3>
-      <div className="grid grid-cols-4 gap-5 md:gap-8 overflow-x-auto">
-        {groups.map((group) => (
-          <div key={group.title} className="bg-custom-charcoal-300 rounded-2xl py-5 px-3 w-[220px]">
+      <div
+        className="w-screen h-screen flex flex-row items-center justify-between gap-8 flex-shrink-0
+        snap-center overflow-x-scroll space-y-5 px-16 py-20 md:py-44
+        scrollbar-thin scrollbar-custom-charcoal-100/20 scrollbar-thumb-custom-aquamarine/80"
+      >
+        {skillGroups.map((group) => (
+          <div
+            key={group.title}
+            className="bg-custom-charcoal-300 rounded-2xl p-3 w-[220px]  flex-shrink-0"
+          >
             <h4 className="text-lg text-center uppercase tracking-widest text-custom-aquamarine">
               {group.title}
             </h4>
             <div>
-              {group.skills?.map((skill) => (
-                <Skill key={skill._id} skill={skill} />
-              ))}
+              {group.skills?.map((skill) => skill && <Skill key={skill._id} skill={skill} />)}
             </div>
           </div>
         ))}

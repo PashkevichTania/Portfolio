@@ -2,40 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== Scrollbar CSS ===== */
-/* Firefox */
-* {
-    scrollbar-width: auto;
-    scrollbar-color: linear-gradient(rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234)) #494F58;
-}
+/*!* ===== Scrollbar CSS ===== *!*/
+/*!* Firefox *!*/
+/** {*/
+/*    scrollbar-width: auto;*/
+/*    scrollbar-color: rgb(93 255 190 / 0.8);*/
+/*}*/
 
-/* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-    width: 15px;
-}
+/*!* Chrome, Edge, and Safari *!*/
+/**::-webkit-scrollbar {*/
+/*    width: 15px;*/
+/*}*/
 
-*::-webkit-scrollbar:horizontal{
-    height: 15px;
-    width: 15px;
-}
+/**::-webkit-scrollbar:horizontal{*/
+/*    height: 15px;*/
+/*    width: 15px;*/
+/*}*/
 
-*::-webkit-scrollbar-track {
-    background: #494F58;
-}
+/**::-webkit-scrollbar-track {*/
+/*    background: #494F58;*/
+/*}*/
 
-*::-webkit-scrollbar-thumb {
-    border: none;
-}
-*::-webkit-scrollbar-thumb:horizontal {
-    background: linear-gradient(45deg, rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234));
-}
-*::-webkit-scrollbar-thumb:vertical {
-    background: linear-gradient(rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234));
-}
+/**::-webkit-scrollbar-thumb {*/
+/*    border: none;*/
+/*}*/
+/**::-webkit-scrollbar-thumb:horizontal {*/
+/*    background: rgb(93 255 190 / 0.8);*/
+/*}*/
+/**::-webkit-scrollbar-thumb:vertical {*/
+/*    background: rgb(93 255 190 / 0.8);*/
+/*}*/
 
-*::-webkit-scrollbar-corner {
-    background: #494F58;
-}
+/**::-webkit-scrollbar-corner {*/
+/*    background: #494F58;*/
+/*}*/
 
 @layer components {
     .linkButton {

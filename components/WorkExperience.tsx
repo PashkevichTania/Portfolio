@@ -24,13 +24,20 @@ export default function WorkExperience({ experiences }: Props) {
           Experience
         </h3>
         <div
-          className="w-full flex space-x-5 overflow-x-scroll
-         p-10 snap-x snap-mandatory"
+          className="z-20 w-screen h-screen flex flex-shrink-0 space-x-5 items-center
+        snap-center overflow-x-scroll px-16 py-20 md:py-44
+        scrollbar-thin scrollbar-custom-charcoal-100/20 scrollbar-thumb-custom-aquamarine/80"
         >
           {experiences?.map((experience) => (
             <ExperienceCard key={experience._id} experience={experience} />
           ))}
         </div>
+
+        <div
+          className=" w-full absolute top-[30%]
+        bg-gradient-to-br from-custom-aquamarine/40 to-custom-indigo/40
+        left-0 h-[500px] -skew-y-12 z-10"
+        />
       </motion.div>
     </>
   )
