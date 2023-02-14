@@ -1,18 +1,15 @@
 import { Skill } from "@/typings"
-import { sanityClient } from "@/lib/sanity"
-import Image from "next/image"
-import { useNextSanityImage } from "next-sanity-image"
+import Img from "./Img"
 
 type Props = {
   skill: Skill
 }
 
 function Skill({ skill }: Props) {
-  const imageProps = useNextSanityImage(sanityClient, skill.image)
   return (
     <div className="relative flex flex-row p-1.5">
-      <Image
-        {...imageProps}
+      <Img
+        src={skill.image}
         alt={skill.title}
         className="bg-custom-snow w-10 h-10 rounded-full m-2"
       />

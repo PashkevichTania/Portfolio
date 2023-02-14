@@ -1,6 +1,6 @@
+import Img from "@/components/Img"
 import { motion } from "framer-motion"
 import { Experience } from "@/typings"
-import { urlFor } from "@/lib/sanity"
 
 type Props = {
   experience: Experience
@@ -15,7 +15,7 @@ export default function ExperienceCard({ experience }: Props) {
      p-10 overflow-hidden
     "
     >
-      <motion.img
+      <motion.div
         initial={{
           y: -100,
           opacity: 0,
@@ -23,11 +23,14 @@ export default function ExperienceCard({ experience }: Props) {
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="w-16 h-16  rounded-full
+      >
+        <Img
+          src={experience?.companyImage}
+          className="w-16 h-16  rounded-full
             object-cover object-center"
-        src={experience?.companyImage ? urlFor(experience.companyImage).url() : "next.svg"}
-        alt=""
-      />
+          alt={experience?.name}
+        />
+      </motion.div>
 
       <div className="px-1 md:px-10">
         <p className="font-bold font-xs mt-1">{experience?.name}</p>
@@ -35,10 +38,10 @@ export default function ExperienceCard({ experience }: Props) {
         <p className="mt-1">{experience?.companyDescription}</p>
         <div className="flex space-x-2 my-2">
           {experience?.technologies?.map((technology) => (
-            <img
+            <Img
               key={technology._id}
               className="h-10 w-10 rounded-full"
-              src={urlFor(technology.image).url()}
+              src={technology.image}
               alt={technology.title}
             />
           ))}

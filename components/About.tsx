@@ -1,15 +1,12 @@
-import { sanityClient } from "@/lib/sanity"
 import { PageInfo } from "@/typings"
 import { motion } from "framer-motion"
-import { useNextSanityImage } from "next-sanity-image"
-import Image from "next/image"
+import Img from "./Img"
 
 type Props = {
   pageInfo: PageInfo
 }
 
 export default function About({ pageInfo }: Props) {
-  const imageProps = useNextSanityImage(sanityClient, pageInfo.profilePic)
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -37,8 +34,8 @@ export default function About({ pageInfo }: Props) {
         viewport={{ once: true }}
         className="flex-shrink-0 -mb-20 md:mb-0  md:rounded-lg md:w-64 md:h-95 xl:w-[300px] xl:h-[350px]"
       >
-        <Image
-          {...imageProps}
+        <Img
+          src={pageInfo.profilePic}
           alt="Avatar"
           className="w-56 h-56 rounded-full object-cover
               md:rounded-lg md:w-64 md:h-95 xl:w-[300px] xl:h-[350px]"

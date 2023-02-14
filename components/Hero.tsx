@@ -1,16 +1,12 @@
 import Spline from "@splinetool/react-spline"
-import { useNextSanityImage } from "next-sanity-image"
 import { Cursor, useTypewriter } from "react-simple-typewriter"
 import { PageInfo } from "@/typings"
-import { sanityClient } from "@/lib/sanity"
-import Image from "next/image"
-
+import Img from "./Img"
 type Props = {
   pageInfo: PageInfo
 }
 
 export default function Hero({ pageInfo }: Props) {
-  const imageProps = useNextSanityImage(sanityClient, pageInfo?.heroImage)
   const [text] = useTypewriter({
     words: ["TypeScript enjoyer", "React / Svelte / Vue Developer", "<LovesToCode />"],
     loop: true,
@@ -25,8 +21,8 @@ export default function Hero({ pageInfo }: Props) {
         <h1 className="text-base uppercase text-custom-charcoal-100 pb-2 tracking-[15px]">
           {pageInfo?.role}
         </h1>
-        <Image
-          {...imageProps}
+        <Img
+          src={pageInfo?.heroImage}
           alt="Avatar"
           className="relative rounded-full h-36 w-36 md:w-44 md:h-44 mx-auto object-cover"
         />
