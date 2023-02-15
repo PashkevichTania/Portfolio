@@ -1,5 +1,5 @@
 import { Skill } from "@/typings"
-import Img from "./Img"
+import Img from "../Shared/Img"
 
 type Props = {
   skill: Skill

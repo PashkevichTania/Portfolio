@@ -1,4 +1,4 @@
-import Img from "@/components/Img"
+import Img from "@/components/Shared/Img"
 import { motion } from "framer-motion"
 import { Experience } from "@/typings"
 
@@ -26,8 +26,8 @@ export default function ExperienceCard({ experience }: Props) {
       >
         <Img
           src={experience?.companyImage}
-          className="w-16 h-16  rounded-full
-            object-cover object-center"
+          className="h-16
+            object-contain object-center"
           alt={experience?.name}
         />
       </motion.div>
@@ -36,16 +36,6 @@ export default function ExperienceCard({ experience }: Props) {
         <p className="font-bold font-xs mt-1">{experience?.name}</p>
         <h4 className="font-light">{experience?.jobTitle}</h4>
         <p className="mt-1">{experience?.companyDescription}</p>
-        <div className="flex space-x-2 my-2">
-          {experience?.technologies?.map((technology) => (
-            <Img
-              key={technology._id}
-              className="h-10 w-10 rounded-full"
-              src={technology.image}
-              alt={technology.title}
-            />
-          ))}
-        </div>
         <p className="uppercase py-1 text-custom-snow text-sm">
           {new Date(experience.dateStarted).toDateString()} -{" "}
           {experience.isCurrentlyWorkingHere
@@ -61,6 +51,16 @@ export default function ExperienceCard({ experience }: Props) {
             <li key={i}>{point}</li>
           ))}
         </ul>
+        <div className="flex space-x-2 my-2">
+          {experience?.technologies?.map((technology) => (
+            <Img
+              key={technology._id}
+              className="h-10 w-10 rounded-full"
+              src={technology.image}
+              alt={technology.title}
+            />
+          ))}
+        </div>
       </div>
     </article>
   )

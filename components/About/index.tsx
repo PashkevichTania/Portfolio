@@ -1,6 +1,6 @@
 import { PageInfo } from "@/typings"
 import { motion } from "framer-motion"
-import Img from "./Img"
+import Img from "../Shared/Img"
 
 type Props = {
   pageInfo: PageInfo

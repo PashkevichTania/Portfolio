@@ -13,7 +13,7 @@ export default function Skills({ skillGroups }: Props) {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="h-screen min-h-screen flex relative flex-col
-    text-center md:text-left xl:flex-row  max-w-full mx-auto
+    text-left xl:flex-row  max-w-full mx-auto
     xl:px-10 justify-center xl:space-y-0 mx-auto
     items-center"
     >
@@ -31,14 +31,15 @@ export default function Skills({ skillGroups }: Props) {
         {skillGroups.map((group) => (
           <div
             key={group.title}
-            className="bg-custom-charcoal-300 rounded-2xl p-3 w-[220px]  flex-shrink-0"
+            className={
+              "bg-custom-charcoal-300 rounded-2xl p-3 min-w-[220px] max-h-[550px] flex-shrink-0 grid " +
+              (group.skills.length > 6 ? "grid-cols-2" : "grid-cols-1")
+            }
           >
             <h4 className="text-lg text-center uppercase tracking-widest text-custom-aquamarine">
               {group.title}
             </h4>
-            <div>
-              {group.skills?.map((skill) => skill && <Skill key={skill._id} skill={skill} />)}
-            </div>
+            {group.skills?.map((skill) => skill && <Skill key={skill._id} skill={skill} />)}
           </div>
         ))}
       </div>

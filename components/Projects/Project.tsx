@@ -1,4 +1,4 @@
-import Img from "@/components/Img"
+import Img from "@/components/Shared/Img"
 import { motion } from "framer-motion"
 import { Project } from "@/typings"
 import Link from "next/link"
