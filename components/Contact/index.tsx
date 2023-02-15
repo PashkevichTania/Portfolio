@@ -44,35 +44,17 @@ export default function ContactMe({ pageInfo }: Props) {
         </h4>
 
         <div className="space-y-2">
-          <div
-            className="flex items-center space-x-5
-                justify-center"
-          >
-            <PaperAirplaneIcon
-              className="text-custom-indigo h-7
-                     w-7"
-            />
+          <div className="flex items-center space-x-5 justify-center">
+            <PaperAirplaneIcon className="text-custom-indigo h-7 w-7" />
             <p className="">Telegram: {pageInfo?.telegram}</p>
           </div>
-          <div
-            className="flex items-center space-x-5
-                justify-center"
-          >
-            <EnvelopeIcon
-              className="text-custom-indigo h-7
-                     w-7"
-            />
+          <div className="flex items-center space-x-5 justify-center">
+            <EnvelopeIcon className="text-custom-indigo h-7 w-7" />
             <p className="">{pageInfo?.email}</p>
           </div>
 
-          <div
-            className="flex items-center space-x-5
-                justify-center"
-          >
-            <MapPinIcon
-              className="text-custom-indigo h-7
-                     w-7"
-            />
+          <div className="flex items-center space-x-5 justify-center">
+            <MapPinIcon className="text-custom-indigo h-7 w-7" />
             <p className="">{pageInfo?.address}</p>
           </div>
         </div>
@@ -88,7 +70,8 @@ export default function ContactMe({ pageInfo }: Props) {
 
           <button
             type="submit"
-            className="bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 py-2
+            className="bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl
+            focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 py-2
                 px-5 rounded-md text-white font-bold
                 "
           >

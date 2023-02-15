@@ -1,12 +1,13 @@
 import Spline from "@splinetool/react-spline"
 import { Cursor, useTypewriter } from "react-simple-typewriter"
 import { PageInfo } from "@/typings"
-import Img from "./Shared/Img"
+import Img from "@/components/Shared/Img"
+
 type Props = {
   pageInfo: PageInfo
 }
 
-export default function Hero({ pageInfo }: Props) {
+export default function Index({ pageInfo }: Props) {
   const [text] = useTypewriter({
     words: ["TypeScript enjoyer", "React / Svelte / Vue Developer", "<LovesToCode />"],
     loop: true,

@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { ArrowUpCircleIcon } from "@heroicons/react/24/solid"
 
-function Footer() {
+function Index() {
   return (
     <footer className="sticky bottom-5 w-full cursor-pointer\">
       <Link href="#hero">
@@ -16,4 +16,4 @@ function Footer() {
   )
 }
 
-export default Footer
+export default Index

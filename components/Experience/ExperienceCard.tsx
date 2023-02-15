@@ -10,10 +10,9 @@ export default function ExperienceCard({ experience }: Props) {
   return (
     <article
       className="flex flex-col rounded-lg h-96
-     items-start justify-between space-y-7 flex-shrink-0 w-[400px]
-     md:w-[500px] xl:w-[800px] snap-center bg-custom-charcoal-300
-     p-10 overflow-hidden
-    "
+     items-start justify-between space-y-7 flex-shrink-0 w-[500px]
+     md:w-[600px] xl:w-[800px] snap-center bg-custom-charcoal-300
+     p-10 overflow-hidden z-20"
     >
       <motion.div
         initial={{
@@ -43,10 +42,7 @@ export default function ExperienceCard({ experience }: Props) {
             : new Date(experience.dateEnded).toDateString()}
         </p>
         {/* h-75 overflow-y-scroll */}
-        <ul
-          className="list-disc space-y-4 ml-5
-             text-sm "
-        >
+        <ul className="list-disc space-y-4 ml-5 text-sm">
           {experience?.points?.map((point, i) => (
             <li key={i}>{point}</li>
           ))}
@@ -55,7 +51,7 @@ export default function ExperienceCard({ experience }: Props) {
           {experience?.technologies?.map((technology) => (
             <Img
               key={technology._id}
-              className="h-10 w-10 rounded-full"
+              className="h-10 w-10 rounded-full bg-custom-snow"
               src={technology.image}
               alt={technology.title}
             />
