@@ -26,8 +26,8 @@ export default function ContactMe({ pageInfo }: Props) {
   }
   return (
     <div
-      className="h-screen flex relative flex-col text-center
-    md:text-left md:flex-row max-w-7xl px-10 justify-evenly
+      className="h-screen w-screen flex relative flex-col text-center
+    md:text-left md:flex-row max-w-7xl pt-36 px-10 justify-evenly
     mx-auto items-center"
     >
       <h3
@@ -40,27 +40,27 @@ export default function ContactMe({ pageInfo }: Props) {
       <div className="flex flex-col space-y-4">
         <h4 className="font-semibold text-center">
           If you are interested{" "}
-          <span className="decoration-custom-indigo underline">Lets Talk.</span>
+          <span className="decoration-custom-aquamarine underline">Lets Talk.</span>
         </h4>
 
         <div className="space-y-2">
           <div className="flex items-center space-x-5 justify-center">
-            <PaperAirplaneIcon className="text-custom-indigo h-7 w-7" />
+            <PaperAirplaneIcon className="text-custom-aquamarine h-7 w-7" />
             <p className="">Telegram: {pageInfo?.telegram}</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="text-custom-indigo h-7 w-7" />
+            <EnvelopeIcon className="text-custom-aquamarine h-7 w-7" />
             <p className="">{pageInfo?.email}</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
-            <MapPinIcon className="text-custom-indigo h-7 w-7" />
+            <MapPinIcon className="text-custom-aquamarine h-7 w-7" />
             <p className="">{pageInfo?.address}</p>
           </div>
         </div>
 
         <form onSubmit={onSubmit} className="flex flex-col space-y-2 w-fit p-4">
-          <div className="flex space-x-2">
+          <div className="flex flex-col md:flex-row gap-2">
             <input name="name" placeholder="Name" className="contactInput" type="text" />
             <input name="email" placeholder="Email" className="contactInput" type="email" />
           </div>
@@ -70,10 +70,10 @@ export default function ContactMe({ pageInfo }: Props) {
 
           <button
             type="submit"
-            className="bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl
+            className="bg-gradient-to-br from-custom-aquamarine to-custom-indigo hover:bg-gradient-to-bl
             focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 py-2
                 px-5 rounded-md text-white font-bold
-                "
+                w-44 self-end"
           >
             Submit
           </button>

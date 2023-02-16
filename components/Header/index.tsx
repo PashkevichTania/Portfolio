@@ -38,17 +38,16 @@ function Index() {
               id="example-navbar-danger"
             >
               <ul className="flex flex-col rounded bg-custom-charcoal-100/20 lg:flex-row list-none lg:ml-auto lg:bg-transparent">
-                {open &&
-                  sections.map((item) => {
-                    if (item.header)
-                      return (
-                        <li className="nav-item">
-                          <Link key={item.name} href={`#${item.name}`}>
-                            <button className="linkButton">{item.header.toUpperCase()}</button>
-                          </Link>
-                        </li>
-                      )
-                  })}
+                {sections.map((item) => {
+                  if (item.header)
+                    return (
+                      <li key={item.name} className="nav-item">
+                        <Link href={`#${item.name}`}>
+                          <button className="linkButton">{item.header.toUpperCase()}</button>
+                        </Link>
+                      </li>
+                    )
+                })}
               </ul>
             </div>
           </div>

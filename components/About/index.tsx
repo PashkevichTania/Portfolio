@@ -12,8 +12,9 @@ export default function About({ pageInfo }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl
-       px-30 justify-evenly mx-auto items-center"
+      className="flex flex-col relative h-screen text-center
+      md:text-left md:flex-row max-w-7xl
+      pt-10 px-30 justify-evenly mx-auto items-center"
     >
       <h3
         className="absolute top-24 uppercase
@@ -37,7 +38,7 @@ export default function About({ pageInfo }: Props) {
         <Img
           src={pageInfo.profilePic}
           alt="Avatar"
-          className="w-56 h-56 rounded-full object-cover
+          className="w-40 h-40 rounded-full object-cover object-top
               md:rounded-lg md:w-64 md:h-95 xl:w-[300px] xl:h-[350px]"
         />
       </motion.div>

@@ -19,7 +19,7 @@ function Project({ project }: Props) {
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="h-[180px]"
+        className="hidden md:block h-[180px]"
       >
         <Img className="h-[180px] object-contain" alt={project?.title} src={project?.image} />
       </motion.div>
@@ -33,7 +33,15 @@ function Project({ project }: Props) {
           </h4>
         </Link>
         <div>
-          <p className="text-lg text-center md:text-left whitespace-pre-wrap">{project?.summary}</p>
+          <p className="text-base md:text-lg text-center md:text-left whitespace-pre-wrap">
+            {project?.summary}
+          </p>
+          <ul className="hidden md:block">
+            Responsibilities:
+            {project.responsibilities?.map((item) => (
+              <li key={item}>-{item}</li>
+            ))}
+          </ul>
           {project?.linkToRepo && (
             <Link
               href={project.linkToRepo}

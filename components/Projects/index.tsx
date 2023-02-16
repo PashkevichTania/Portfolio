@@ -21,7 +21,6 @@ export default function Projects({ projects }: Props) {
       >
         Projects
       </h3>
-
       <div
         className="relative w-full flex overflow-x-scroll
        overflow-y-hidden snap-x snap-mandatory z-20

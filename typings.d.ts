@@ -48,7 +48,6 @@ export interface Experience extends SanityBody {
   dateEnded: date
   isCurrentlyWorkingHere: boolean
   jobTitle: string
-  points: string[]
   technologies: Skill[]
 }
 
@@ -59,6 +58,7 @@ export interface Project extends SanityBody {
   summary: string
   isCommercial: boolean
   technologies: Skill[]
+  responsibilities: string[]
   linkToBuild?: string
   linkToRepo?: string
 }

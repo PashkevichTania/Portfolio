@@ -47,7 +47,7 @@
     .contactInput {
         @apply outline-none bg-slate-400/10 rounded-sm border-b
         px-4 py-2 border-[#242424] text-gray-500 placeholder-gray-500
-        transition-all focus:border-custom-indigo focus:text-custom-indigo
-        hover:border-custom-indigo
+        transition-all focus:border-custom-aquamarine focus:text-custom-aquamarine
+        hover:border-custom-aquamarine
     }
 }

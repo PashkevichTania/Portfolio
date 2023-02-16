@@ -17,8 +17,9 @@ function CodeExamples({ examples }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="flex flex-col items-center justify-between relative h-screen
-       text-center max-w-7xl px-30 justify-evenly mx-auto items-center"
+      className="h-screen flex relative overflow-hidden flex-col
+    text-lft md:flex-row max-w-full px-10 justify-evenly mx-auto
+    items-center"
     >
       <h3
         className="absolute top-24 uppercase
@@ -26,11 +27,18 @@ function CodeExamples({ examples }: Props) {
       >
         Code Examples
       </h3>
-      <div className="p-2 flex flex-row space-x-8 justify-between text-left">
+      <div
+        className="w-screen h-screen flex p-2 flex flex-row justify-between items-center
+         flex-shrink-0 text-left z-20 space-x-5 items-center snap-center
+         overflow-x-scroll pt-36 py-20 md:py-44
+        scrollbar-thin scrollbar-custom-charcoal-100/20 scrollbar-thumb-custom-aquamarine/80"
+      >
         {examples.map((item) => (
           <div key={item._id} className="m-2">
-            <pre className='overflow-auto  max-h-[550px] max-w-xl
-            scrollbar-thin scrollbar-track-custom-charcoal-100/20 scrollbar-thumb-custom-aquamarine/80'>
+            <pre
+              className="overflow-auto  max-h-[400px] md:max-h-[550px]
+            scrollbar-thin scrollbar-track-custom-charcoal-100/20 scrollbar-thumb-custom-aquamarine/80"
+            >
               <code className={`match-braces rainbow-braces language-${item.language} `}>
                 {item.code}
               </code>
