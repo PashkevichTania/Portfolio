@@ -41,12 +41,6 @@ export default function ExperienceCard({ experience }: Props) {
             ? "Present"
             : new Date(experience.dateEnded).toDateString()}
         </p>
-        {/* h-75 overflow-y-scroll */}
-        <ul className="list-disc space-y-4 ml-5 text-sm">
-          {experience?.points?.map((point, i) => (
-            <li key={i}>{point}</li>
-          ))}
-        </ul>
         <div className="flex space-x-2 my-2">
           {experience?.technologies?.map((technology) => (
             <Img
