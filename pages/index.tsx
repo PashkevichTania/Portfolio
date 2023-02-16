@@ -1,12 +1,8 @@
+import { QUERIES } from "@/lib/queries"
+import { sanityClient } from "@/lib/sanity"
 import Head from "next/head"
-import { Experience, PageInfo, Project, Skill, CodeExample, SkillGroup } from "@/typings"
+import { Experience, PageInfo, Project, CodeExample, SkillGroup } from "@/typings"
 import { GetStaticProps } from "next"
-import { fetchPageInfo } from "@/utils/fetchpageInfo"
-import { fetchExperiences } from "@/utils/fetchExperiences"
-import { fetchSkills } from "@/utils/fetchSkills"
-import { fetchSkillGroups } from "@/utils/fetchSkillGroups"
-import { fetchProjects } from "@/utils/fetchProjects"
-import { fetchCodeExamples } from "@/utils/fetchCodeExamples"
 import Header from "@/components/Header"
 import Hero from "@/components/Hero"
 import About from "@/components/About"
@@ -20,7 +16,6 @@ import Footer from "@/components/Footer"
 type Props = {
   pageInfo: PageInfo
   experiences: Experience[]
-  skills: Skill[]
   skillGroups: SkillGroup[]
   projects: Project[]
   codeExamples: CodeExample[]
@@ -103,18 +98,16 @@ const Home = (props: Props) => {
 export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo()
-  const experiences: Experience[] = await fetchExperiences()
-  const skills: Skill[] = await fetchSkills()
-  const skillGroups: SkillGroup[] = await fetchSkillGroups()
-  const projects: Project[] = await fetchProjects()
-  const codeExamples: CodeExample[] = await fetchCodeExamples()
+  const pageInfo: PageInfo = await sanityClient.fetch(QUERIES.pageInfo)
+  const experiences: Experience[] = await sanityClient.fetch(QUERIES.experience)
+  const skillGroups: SkillGroup[] = await sanityClient.fetch(QUERIES.skillGroups)
+  const projects: Project[] = await sanityClient.fetch(QUERIES.projects)
+  const codeExamples: CodeExample[] = await sanityClient.fetch(QUERIES.codeExpl)
 
   return {
     props: {
       pageInfo,
       experiences,
-      skills,
       skillGroups,
       projects,
       codeExamples,
