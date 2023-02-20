@@ -29,8 +29,7 @@ function CodeExamples({ examples }: Props) {
       </h3>
       <div
         className="w-screen h-screen flex p-2 flex flex-row justify-between items-center
-         flex-shrink-0 text-left z-20 space-x-5 items-center snap-center
-         overflow-x-scroll pt-36 py-20 md:py-44
+         flex-shrink-0 text-left z-20 space-x-5 items-center snap-center overflow-x-scroll pt-36
         scrollbar-thin scrollbar-custom-charcoal-100/20 scrollbar-thumb-custom-aquamarine/80"
       >
         {examples.map((item) => (
