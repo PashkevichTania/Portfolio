@@ -1,11 +1,28 @@
-## The live app
-https://portfolio-3r6t7ts60-north-tower.vercel.app/
+# A Next.js portfolio app with Sanity.io
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a statically generated portfolio that uses [Next.js][nextjs] for the frontend and [Sanity][sanity-homepage] to handle its content.
+
+## The live app 
+https://portfolio-phi-sand-24.vercel.app/
+
+## Features
+
+- A performant, static portfolio
+- Real-time and collaborative content editing with fine-grained revision history
+- Adaptive for mobile/tablet/desktop
+- Free and boosted Sanity project with unlimited admin users, free content updates, and pay-as-you-go for API overages
+- A project with starter-friendly and not too heavy-handed TypeScript and Tailwind.css
 
 ## Getting Started
 
-First, run the development server:
+Set up .env file
+
+```text
+NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+NEXT_PUBLIC_SANITY_DATASET=production
+```
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -21,9 +38,6 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 

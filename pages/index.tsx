@@ -74,7 +74,7 @@ const Home = (props: Props) => {
      scrollbar scrollbar-track-custom-charcoal-100/20 scrollbar-thumb-custom-aquamarine/80"
     >
       <Head>
-        <title>Tania-Pashkevich-Portfolio</title>
+        <title>{props.pageInfo.name} Portfolio</title>
       </Head>
 
       <Header />
