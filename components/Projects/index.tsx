@@ -7,9 +7,10 @@ import { Swiper, SwiperSlide } from "swiper/react"
 
 type Props = {
   projects: ProjectType[]
+  header: string
 }
 
-export default function Projects({ projects }: Props) {
+export default function Projects({ projects, header }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -18,7 +19,7 @@ export default function Projects({ projects }: Props) {
       className="h-screen relative flex overflow-hidden flex-out flex-col
     text-left max-w-full justify-evenly mx-auto items-center z-0"
     >
-      <h3 className="header">Projects</h3>
+      <h3 className="header">{header}</h3>
       <div
         className="relative w-full flex overflow-x-scroll
        overflow-y-hidden snap-x snap-mandatory z-20 px-2 md:px-10 pb-10

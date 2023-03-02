@@ -19,9 +19,9 @@ function Project({ project }: Props) {
           <Link href={project?.linkToBuild || "#"} className="cursor-pointer">
             <span className="underline decoration-custom-aquamarine">
               {project.isCommercial ? "Commercial" : "Learning"} project:
-            </span>{" "}
+            </span>
           </Link>
-          {project?.title}
+          {" " + project?.title}
         </h4>
         <div>
           <p className="text-base md:text-lg text-center md:text-left whitespace-pre-wrap">

@@ -7,7 +7,7 @@ type Props = {
   pageInfo: PageInfo
 }
 
-export default function Index({ pageInfo }: Props) {
+export default function Header({ pageInfo }: Props) {
   const [text] = useTypewriter({
     words: ["TypeScript enjoyer", "React / Svelte / Vue Developer", "<LovesToCode />"],
     loop: true,

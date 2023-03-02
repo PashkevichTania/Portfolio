@@ -4,9 +4,10 @@ import { SkillGroup } from "@/typings"
 
 type Props = {
   skillGroups: SkillGroup[]
+  header: string
 }
 
-export default function Skills({ skillGroups }: Props) {
+export default function Skills({ skillGroups, header }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -17,7 +18,7 @@ export default function Skills({ skillGroups }: Props) {
     xl:px-10 justify-center xl:space-y-0 mx-auto
     items-center"
     >
-      <h3 className="header">Skills</h3>
+      <h3 className="header">{header}</h3>
       <div
         className="w-screen h-screen flex flex-row items-center justify-between gap-8 flex-shrink-0
         snap-center overflow-x-scroll space-y-5 pt-28 py-20 md:py-44

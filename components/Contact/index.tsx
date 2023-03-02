@@ -10,9 +10,10 @@ type Inputs = {
 
 type Props = {
   pageInfo: PageInfo
+  header: string
 }
 
-export default function ContactMe({ pageInfo }: Props) {
+export default function ContactMe({ pageInfo, header }: Props) {
   const onSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault()
     const target = event.target as typeof event.target & Inputs
@@ -30,7 +31,7 @@ export default function ContactMe({ pageInfo }: Props) {
     md:text-left md:flex-row max-w-7xl pt-36 px-10 justify-evenly
     mx-auto items-center"
     >
-      <h3 className="header">Contact</h3>
+      <h3 className="header">{header}</h3>
       <div className="flex flex-col space-y-4">
         <h4 className="font-semibold text-center">
           If you are interested{" "}

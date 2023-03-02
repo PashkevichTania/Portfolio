@@ -30,37 +30,43 @@ export const sections = [
   {
     name: "about",
     props: "pageInfo",
-    component: (props: PageInfo) => <About pageInfo={props} />,
+    component: (props: PageInfo, header: string) => <About pageInfo={props} header={header} />,
     header: "about",
   },
   {
     name: "skills",
     props: "skillGroups",
-    component: (props: SkillGroup[]) => <Skills skillGroups={props} />,
+    component: (props: SkillGroup[], header: string) => (
+      <Skills skillGroups={props} header={header} />
+    ),
     header: "skills",
-  },
-  {
-    name: "codeExamples",
-    props: "codeExamples",
-    component: (props: CodeExample[]) => <CodeExamples examples={props} />,
-    header: "code",
   },
   {
     name: "experience",
     props: "experiences",
-    component: (props: Experience[]) => <WorkExperience experiences={props} />,
+    component: (props: Experience[], header: string) => (
+      <WorkExperience experiences={props} header={header} />
+    ),
     header: "experience",
   },
   {
     name: "projects",
     props: "projects",
-    component: (props: Project[]) => <Projects projects={props} />,
+    component: (props: Project[], header: string) => <Projects projects={props} header={header} />,
     header: "projects",
+  },
+  {
+    name: "codeExamples",
+    props: "codeExamples",
+    component: (props: CodeExample[], header: string) => (
+      <CodeExamples examples={props} header={header} />
+    ),
+    header: "code",
   },
   {
     name: "contact",
     props: "pageInfo",
-    component: (props: PageInfo) => <ContactMe pageInfo={props} />,
+    component: (props: PageInfo, header: string) => <ContactMe pageInfo={props} header={header} />,
     header: "contact",
   },
 ]
@@ -78,15 +84,11 @@ const Home = (props: Props) => {
       </Head>
 
       <Header />
-      {sections.map((item, idx) => {
+      {sections.map((item) => {
         return (
-          <section
-            key={item.name}
-            id={item.name}
-            className={idx % 2 === 0 ? "snap-center" : "snap-start"}
-          >
+          <section key={item.name} id={item.name} className="snap-center">
             {/*@ts-ignore*/}
-            {item.component(props[item.props])}
+            {item.component(props[item.props], item.header)}
           </section>
         )
       })}

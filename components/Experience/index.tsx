@@ -4,9 +4,10 @@ import { Experience } from "@/typings"
 
 type Props = {
   experiences: Experience[]
+  header: string
 }
 
-export default function WorkExperience({ experiences }: Props) {
+export default function WorkExperience({ experiences, header }: Props) {
   return (
     <>
       <motion.div
@@ -17,7 +18,7 @@ export default function WorkExperience({ experiences }: Props) {
     text-lft md:flex-row max-w-full px-10 justify-evenly mx-auto
     items-center"
       >
-        <h3 className="header">Experience</h3>
+        <h3 className="header">{header}</h3>
         <div
           className="z-20 w-screen h-screen flex flex-shrink-0 space-x-5 items-center
         snap-center overflow-x-scroll px-16 py-20 md:py-44

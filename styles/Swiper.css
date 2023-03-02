@@ -1,3 +1,24 @@
 .swiper-button-next:after, .swiper-button-prev:after{
     color: #5DFFBE;
+    transform: scale(80%);
+}
+
+@media (min-width: 768px) {
+    .swiper-button-next:after, .swiper-button-prev:after{
+        transform: scale(100%);
+    }
+}
+
+/* target the active bullet */
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #5DFFBE;
+    opacity: 1;
+    z-index: 50;
+}
+
+/* target all bullets */
+.swiper-pagination-bullet {
+    background-color: white;
+    opacity: 1;
+    z-index: 50;
 }

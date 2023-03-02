@@ -10,9 +10,9 @@ export default function ExperienceCard({ experience }: Props) {
   return (
     <article
       className="flex flex-col rounded-lg h-96
-     items-start justify-between space-y-7 flex-shrink-0 w-[500px]
+     items-start justify-between space-y-2 md: space-y-5 flex-shrink-0 w-[500px]
      md:w-[600px] xl:w-[800px] snap-center bg-custom-charcoal-300
-     p-10 overflow-hidden z-20"
+     p-5 md:p-10 overflow-hidden z-20"
     >
       <motion.div
         initial={{
