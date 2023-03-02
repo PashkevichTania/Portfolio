@@ -30,13 +30,7 @@ export default function ContactMe({ pageInfo }: Props) {
     md:text-left md:flex-row max-w-7xl pt-36 px-10 justify-evenly
     mx-auto items-center"
     >
-      <h3
-        className="absolute top-24 uppercase tracking-[20px]
-       text-custom-charcoal-100 text-2xl pb-3"
-      >
-        Contact
-      </h3>
-
+      <h3 className="header">Contact</h3>
       <div className="flex flex-col space-y-4">
         <h4 className="font-semibold text-center">
           If you are interested{" "}

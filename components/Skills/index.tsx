@@ -17,12 +17,7 @@ export default function Skills({ skillGroups }: Props) {
     xl:px-10 justify-center xl:space-y-0 mx-auto
     items-center"
     >
-      <h3
-        className="absolute top-24 uppercase tracking-[20px]
-        text-custom-charcoal-100 text-2xl"
-      >
-        Skills
-      </h3>
+      <h3 className="header">Skills</h3>
       <div
         className="w-screen h-screen flex flex-row items-center justify-between gap-8 flex-shrink-0
         snap-center overflow-x-scroll space-y-5 pt-28 py-20 md:py-44

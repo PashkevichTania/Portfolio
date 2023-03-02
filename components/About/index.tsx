@@ -16,13 +16,7 @@ export default function About({ pageInfo }: Props) {
       md:text-left md:flex-row max-w-7xl
       pt-10 px-30 justify-evenly mx-auto items-center"
     >
-      <h3
-        className="absolute top-24 uppercase
-        tracking-[20px] text-custom-charcoal-100 text-2xl"
-      >
-        About
-      </h3>
-
+      <h3 className="header">About</h3>
       <motion.div
         initial={{
           x: -200,

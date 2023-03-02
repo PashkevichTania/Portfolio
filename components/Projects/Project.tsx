@@ -1,5 +1,4 @@
 import Img from "@/components/Shared/Img"
-import { motion } from "framer-motion"
 import { Project } from "@/typings"
 import Link from "next/link"
 
@@ -11,37 +10,31 @@ function Project({ project }: Props) {
   return (
     <div
       key={project._id}
-      className="w-screen flex-shrink-0 snap-center flex flex-col
-            space-y-5 items-center justify-center p-20 md:p-44 h-screen"
+      className="w-screen snap-center flex flex-col
+        space-y-2 items-center justify-center h-screen p-20 md:p-40"
     >
-      <motion.div
-        initial={{ y: -300, opacity: 0 }}
-        transition={{ duration: 1.2 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="hidden md:block h-[180px]"
-      >
-        <Img className="h-[180px] object-contain" alt={project?.title} src={project?.image} />
-      </motion.div>
-      <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-        <Link href={project?.linkToBuild || "#"}>
-          <h4 className="text-4xl font-semibold text-center">
+      <Img className="h-[180px] object-contain" alt={project?.title} src={project?.image} />
+      <div className="space-y-5 px-0 md:px-10 max-w-6xl">
+        <h4 className="text-2xl md:text-4xl font-semibold text-center">
+          <Link href={project?.linkToBuild || "#"} className="cursor-pointer">
             <span className="underline decoration-custom-aquamarine">
               {project.isCommercial ? "Commercial" : "Learning"} project:
             </span>{" "}
-            {project?.title}
-          </h4>
-        </Link>
+          </Link>
+          {project?.title}
+        </h4>
         <div>
           <p className="text-base md:text-lg text-center md:text-left whitespace-pre-wrap">
             {project?.summary}
           </p>
-          <ul className="hidden md:block">
-            Responsibilities:
-            {project.responsibilities?.map((item) => (
-              <li key={item}>-{item}</li>
-            ))}
-          </ul>
+          {project.responsibilities?.length && (
+            <ul className="hidden md:block">
+              Responsibilities:
+              {project.responsibilities?.map((item) => (
+                <li key={item}>-{item}</li>
+              ))}
+            </ul>
+          )}
           {project?.linkToRepo && (
             <Link
               href={project.linkToRepo}
@@ -56,7 +49,7 @@ function Project({ project }: Props) {
             </Link>
           )}
         </div>
-        <div className="flex items-center space-x-2 justify-start">
+        <div className="flex flex-wrap items-center space-x-2 justify-start">
           {project?.technologies?.map((technology) => (
             <Img
               key={technology._id}

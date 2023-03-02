@@ -21,12 +21,7 @@ function CodeExamples({ examples }: Props) {
     text-lft md:flex-row max-w-full px-10 justify-evenly mx-auto
     items-center"
     >
-      <h3
-        className="absolute top-24 uppercase
-        tracking-[20px] text-custom-charcoal-100 text-2xl"
-      >
-        Code Examples
-      </h3>
+      <h3 className="header">Code</h3>
       <div
         className="w-screen h-screen flex p-2 flex flex-row justify-between items-center
          flex-shrink-0 text-left z-20 space-x-5 items-center snap-center overflow-x-scroll pt-36
