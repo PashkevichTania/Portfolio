@@ -114,6 +114,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects,
       codeExamples,
     },
-    revalidate: 10,
   }
 }
