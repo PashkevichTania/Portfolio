@@ -27,10 +27,11 @@ export default function Header({ pageInfo }: Props) {
           alt="Avatar"
           className="relative rounded-full h-36 w-36 md:w-44 md:h-44 mx-auto object-cover"
         />
-        <h2 className="text-3xl lg:text-4xl font-light px-10">
-          <span className="ar-3">{text}</span>
+        <h2 className="text-3xl lg:text-4xl font-light px-10">{pageInfo.name}</h2>
+        <h3 className="text-2xl lg:text-3xl font-light px-10">
+          <span className="ar-3 text-custom-charcoal-100">{text}</span>
           <Cursor cursorColor="#5DFFBE" />
-        </h2>
+        </h3>
       </div>
       <div className="z-20 w-full h-[500px] hidden sm:block">
         <Spline scene={pageInfo.splineUrl} />
