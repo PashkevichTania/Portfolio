@@ -11,7 +11,7 @@ function Project({ project }: Props) {
     <div
       key={project._id}
       className="w-screen snap-center flex flex-col
-        space-y-2 items-center justify-center h-screen p-20 md:p-40"
+        space-y-2 items-center justify-center h-screen p-12 md:p-20 lg:p-40"
     >
       <Img className="h-[180px] object-contain" alt={project?.title} src={project?.image} />
       <div className="space-y-5 px-0 md:px-10 max-w-6xl">
@@ -24,7 +24,7 @@ function Project({ project }: Props) {
           {" " + project?.title}
         </h4>
         <div>
-          <p className="text-base md:text-lg text-center md:text-left whitespace-pre-wrap">
+          <p className="text-base lg:text-lg text-center md:text-left whitespace-pre-wrap mb-5">
             {project?.summary}
           </p>
           {project.responsibilities?.length && (
