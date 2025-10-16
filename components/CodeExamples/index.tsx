@@ -24,7 +24,7 @@ function CodeExamples({ examples, header }: Props) {
     >
       <h3 className="header">{header}</h3>
       <div
-        className="w-screen h-screen flex p-2 gap-4 flex-row justify-between lg:justify-center items-center
+        className="w-screen h-screen flex p-2 gap-4 flex-row justify-between items-center
          flex-shrink-0 text-left z-20 overflow-x-scroll pt-12 md:pt-28 md:px-10
         scrollbar-thin scrollbar-custom-charcoal-100/20 scrollbar-thumb-custom-aquamarine/80"
       >
