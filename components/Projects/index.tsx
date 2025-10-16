@@ -22,7 +22,7 @@ export default function Projects({ projects, header }: Props) {
       <h3 className="header">{header}</h3>
       <div
         className="relative w-full flex overflow-x-scroll
-       overflow-y-hidden snap-x snap-mandatory z-20 px-2 md:px-10 pb-10
+       overflow-y-hidden snap-x snap-mandatory z-20 px-1 md:px-10 pb-10
         scrollbar-thin scrollbar-custom-charcoal-100/20 scrollbar-thumb-custom-aquamarine/80"
       >
         <Swiper

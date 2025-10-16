@@ -24,14 +24,14 @@ function CodeExamples({ examples, header }: Props) {
     >
       <h3 className="header">{header}</h3>
       <div
-        className="w-screen h-screen flex p-2 gap-4 flex flex-row justify-between items-center
-         flex-shrink-0 text-left z-20 items-center overflow-x-scroll pt-36 md:px-10
+        className="w-screen h-screen flex p-2 gap-4 flex-row justify-between lg:justify-center items-center
+         flex-shrink-0 text-left z-20 overflow-x-scroll pt-12 md:pt-28 md:px-10
         scrollbar-thin scrollbar-custom-charcoal-100/20 scrollbar-thumb-custom-aquamarine/80"
       >
         {examples.map((item) => (
           <div key={item._id}>
             <pre
-              className="overflow-auto max-h-[500px] md:max-h-[550px]
+              className="overflow-auto max-h-[550px] md:max-h-[600px]
             scrollbar-thin scrollbar-track-custom-charcoal-100/20 scrollbar-thumb-custom-aquamarine/80"
             >
               <code className={`match-braces rainbow-braces language-${item.language} `}>
