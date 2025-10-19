@@ -9,7 +9,7 @@ type Props = {
 
 export default function Header({ pageInfo }: Props) {
   const [text] = useTypewriter({
-    words: ["TypeScript enjoyer", "React / Svelte / Vue Developer", "<LovesToCode />"],
+    words: ["TypeScript enjoyer", "React / NextJs Developer", "<LovesToCode />"],
     loop: true,
     delaySpeed: 2000,
   })
